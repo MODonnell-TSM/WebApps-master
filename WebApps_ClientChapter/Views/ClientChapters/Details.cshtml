@@ -1,0 +1,506 @@
+﻿@model WebApps_ClientChapter.Models.ClientChapter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ClientChapter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChapterCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChapterCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChapterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChapterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientLevel1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientLevel1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientLevel2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientLevel2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientLevel3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientLevel3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientLevel4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientLevel4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnvelopeLine1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnvelopeLine1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnvelopeLine2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnvelopeLine2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnvelopeLine3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnvelopeLine3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnvelopeLine4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnvelopeLine4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnvelopeLine5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnvelopeLine5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnvelopeClientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnvelopeClientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientAddressLine1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientAddressLine1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientAddressLine2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientAddressLine2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientAddressLine3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientAddressLine3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uw)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uw)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Commander)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Commander)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommanderTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommanderTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillingChapter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingChapter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommanderLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommanderLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientFax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientFax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientEmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientEmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OldChapterCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OldChapterCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerBillingNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerBillingNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lockbox)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lockbox)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UwBlackoutFromDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UwBlackoutFromDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UwBlackoutToDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UwBlackoutToDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MD_COORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MD_COORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Commander2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Commander2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommanderTitle2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommanderTitle2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommanderLastName2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommanderLastName2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillingChapter2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingChapter2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientEmailAddress2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientEmailAddress2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MspThank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MspThank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastThankYouDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastThankYouDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeedNames)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeedNames)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OriginalName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OriginalName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChapterDesignation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChapterDesignation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Division)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Division)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vertical)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vertical)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientActiveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientActiveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FiscalYearBegins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FiscalYearBegins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flex1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flex1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flex2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flex2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flex3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flex3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flex4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flex4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flex5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flex5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClientChapterSKey }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TSMAppsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ClientChapter">
+          <Key>
+            <PropertyRef Name="ClientChapterSKey" />
+          </Key>
+          <Property Name="ClientChapterSKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientID" Type="nvarchar" MaxLength="6" />
+          <Property Name="ChapterCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="ChapterName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientLevel1" Type="nvarchar" MaxLength="20" />
+          <Property Name="ClientLevel2" Type="nvarchar" MaxLength="30" />
+          <Property Name="ClientLevel3" Type="nvarchar" MaxLength="20" />
+          <Property Name="ClientLevel4" Type="nvarchar" MaxLength="35" />
+          <Property Name="EnvelopeLine1" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnvelopeLine2" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnvelopeLine3" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnvelopeLine4" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnvelopeLine5" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnvelopeClientName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientAddressLine1" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientAddressLine2" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientAddressLine3" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientState" Type="nvarchar" MaxLength="2" />
+          <Property Name="ClientZip" Type="nvarchar" MaxLength="12" />
+          <Property Name="Uw" Type="nvarchar" MaxLength="50" />
+          <Property Name="Commander" Type="nvarchar" MaxLength="50" />
+          <Property Name="CommanderTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingChapter" Type="nvarchar" MaxLength="50" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CommanderLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientFax" Type="nvarchar" MaxLength="20" />
+          <Property Name="ClientEmailAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="OldChapterCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerBillingNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="WebAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="Region" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lockbox" Type="bit" />
+          <Property Name="UwBlackoutFromDate" Type="date" />
+          <Property Name="UwBlackoutToDate" Type="date" />
+          <Property Name="MD_COORD" Type="nvarchar" MaxLength="50" />
+          <Property Name="Commander2" Type="nvarchar" MaxLength="50" />
+          <Property Name="CommanderTitle2" Type="nvarchar" MaxLength="50" />
+          <Property Name="CommanderLastName2" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingChapter2" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientEmailAddress2" Type="nvarchar" MaxLength="100" />
+          <Property Name="MspThank" Type="bit" />
+          <Property Name="LastThankYouDate" Type="date" />
+          <Property Name="SeedNames" Type="bit" />
+          <Property Name="OriginalName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChapterDesignation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Division" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="Vertical" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientActiveDate" Type="date" />
+          <Property Name="FiscalYearBegins" Type="date" />
+          <Property Name="Flex1" Type="nvarchar" MaxLength="100" />
+          <Property Name="Flex2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Flex3" Type="nvarchar" MaxLength="100" />
+          <Property Name="Flex4" Type="nvarchar" MaxLength="100" />
+          <Property Name="Flex5" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="TSMAppsModelStoreContainer">
+          <EntitySet Name="ClientChapter" EntityType="Self.ClientChapter" Schema="cc" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TSMAppsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ClientChapter">
+          <Key>
+            <PropertyRef Name="ClientChapterSKey" />
+          </Key>
+          <Property Name="ClientChapterSKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientID" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="ChapterCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ChapterName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientLevel1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ClientLevel2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ClientLevel3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ClientLevel4" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="EnvelopeLine1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnvelopeLine2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnvelopeLine3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnvelopeLine4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnvelopeLine5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnvelopeClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientAddressLine1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientAddressLine2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientAddressLine3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientState" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ClientZip" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Uw" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Commander" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CommanderTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingChapter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CommanderLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientFax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ClientEmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OldChapterCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerBillingNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WebAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lockbox" Type="Boolean" />
+          <Property Name="UwBlackoutFromDate" Type="DateTime" Precision="0" />
+          <Property Name="UwBlackoutToDate" Type="DateTime" Precision="0" />
+          <Property Name="MD_COORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Commander2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CommanderTitle2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CommanderLastName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingChapter2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientEmailAddress2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MspThank" Type="Boolean" />
+          <Property Name="LastThankYouDate" Type="DateTime" Precision="0" />
+          <Property Name="SeedNames" Type="Boolean" />
+          <Property Name="OriginalName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChapterDesignation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="Vertical" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientActiveDate" Type="DateTime" Precision="0" />
+          <Property Name="FiscalYearBegins" Type="DateTime" Precision="0" />
+          <Property Name="Flex1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Flex2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Flex3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Flex4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Flex5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="TSMAppsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClientChapters" EntityType="Self.ClientChapter" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TSMAppsModelStoreContainer" CdmEntityContainer="TSMAppsEntities">
+          <EntitySetMapping Name="ClientChapters">
+            <EntityTypeMapping TypeName="TSMAppsModel.ClientChapter">
+              <MappingFragment StoreEntitySet="ClientChapter">
+                <ScalarProperty Name="ClientChapterSKey" ColumnName="ClientChapterSKey" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="ChapterCode" ColumnName="ChapterCode" />
+                <ScalarProperty Name="ChapterName" ColumnName="ChapterName" />
+                <ScalarProperty Name="ClientLevel1" ColumnName="ClientLevel1" />
+                <ScalarProperty Name="ClientLevel2" ColumnName="ClientLevel2" />
+                <ScalarProperty Name="ClientLevel3" ColumnName="ClientLevel3" />
+                <ScalarProperty Name="ClientLevel4" ColumnName="ClientLevel4" />
+                <ScalarProperty Name="EnvelopeLine1" ColumnName="EnvelopeLine1" />
+                <ScalarProperty Name="EnvelopeLine2" ColumnName="EnvelopeLine2" />
+                <ScalarProperty Name="EnvelopeLine3" ColumnName="EnvelopeLine3" />
+                <ScalarProperty Name="EnvelopeLine4" ColumnName="EnvelopeLine4" />
+                <ScalarProperty Name="EnvelopeLine5" ColumnName="EnvelopeLine5" />
+                <ScalarProperty Name="EnvelopeClientName" ColumnName="EnvelopeClientName" />
+                <ScalarProperty Name="ClientAddressLine1" ColumnName="ClientAddressLine1" />
+                <ScalarProperty Name="ClientAddressLine2" ColumnName="ClientAddressLine2" />
+                <ScalarProperty Name="ClientAddressLine3" ColumnName="ClientAddressLine3" />
+                <ScalarProperty Name="ClientCity" ColumnName="ClientCity" />
+                <ScalarProperty Name="ClientState" ColumnName="ClientState" />
+                <ScalarProperty Name="ClientZip" ColumnName="ClientZip" />
+                <ScalarProperty Name="Uw" ColumnName="Uw" />
+                <ScalarProperty Name="Commander" ColumnName="Commander" />
+                <ScalarProperty Name="CommanderTitle" ColumnName="CommanderTitle" />
+                <ScalarProperty Name="BillingChapter" ColumnName="BillingChapter" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="CommanderLastName" ColumnName="CommanderLastName" />
+                <ScalarProperty Name="ClientPhone" ColumnName="ClientPhone" />
+                <ScalarProperty Name="ClientFax" ColumnName="ClientFax" />
+                <ScalarProperty Name="ClientEmailAddress" ColumnName="ClientEmailAddress" />
+                <ScalarProperty Name="OldChapterCode" ColumnName="OldChapterCode" />
+                <ScalarProperty Name="CustomerBillingNumber" ColumnName="CustomerBillingNumber" />
+                <ScalarProperty Name="WebAddress" ColumnName="WebAddress" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="Lockbox" ColumnName="Lockbox" />
+                <ScalarProperty Name="UwBlackoutFromDate" ColumnName="UwBlackoutFromDate" />
+                <ScalarProperty Name="UwBlackoutToDate" ColumnName="UwBlackoutToDate" />
+                <ScalarProperty Name="MD_COORD" ColumnName="MD_COORD" />
+                <ScalarProperty Name="Commander2" ColumnName="Commander2" />
+                <ScalarProperty Name="CommanderTitle2" ColumnName="CommanderTitle2" />
+                <ScalarProperty Name="CommanderLastName2" ColumnName="CommanderLastName2" />
+                <ScalarProperty Name="BillingChapter2" ColumnName="BillingChapter2" />
+                <ScalarProperty Name="ClientEmailAddress2" ColumnName="ClientEmailAddress2" />
+                <ScalarProperty Name="MspThank" ColumnName="MspThank" />
+                <ScalarProperty Name="LastThankYouDate" ColumnName="LastThankYouDate" />
+                <ScalarProperty Name="SeedNames" ColumnName="SeedNames" />
+                <ScalarProperty Name="OriginalName" ColumnName="OriginalName" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ChapterDesignation" ColumnName="ChapterDesignation" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Vertical" ColumnName="Vertical" />
+                <ScalarProperty Name="ClientActiveDate" ColumnName="ClientActiveDate" />
+                <ScalarProperty Name="FiscalYearBegins" ColumnName="FiscalYearBegins" />
+                <ScalarProperty Name="Flex1" ColumnName="Flex1" />
+                <ScalarProperty Name="Flex2" ColumnName="Flex2" />
+                <ScalarProperty Name="Flex3" ColumnName="Flex3" />
+                <ScalarProperty Name="Flex4" ColumnName="Flex4" />
+                <ScalarProperty Name="Flex5" ColumnName="Flex5" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
