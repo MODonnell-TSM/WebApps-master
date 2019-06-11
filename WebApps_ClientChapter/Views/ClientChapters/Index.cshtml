@@ -10,31 +10,31 @@
 <style>
 
 
-    table {
+    table.table2 {
         border-collapse: collapse;
         width: 100%;
     }
 
-    th {
+    table.table2 th {
         background-color: #716e6e;
         color: white;
         cursor: pointer;
     }
 
-    th, td {
+     table.table2 th,  table.table2 td {
         text-align: left;
         padding: 8px;
     }
 
-    tr:nth-child(even) {
+     table.table2 tr:nth-child(even) {
         background-color: #f2f2f2;
     }
 
-    tr:hover {
+     table.table2 tr:hover {
         background-color: #acacac;
     }
 
-    button {
+    button.button2 {
         background-color: #333; /* TrueSense Blue */
         border: none;
         color: white;
@@ -51,10 +51,9 @@
 <script src="~/Scripts/TableSorter.js" /></script>
 
 <div style="font-family:Arial">
-    <h2>ClientChapter Search</h2>
 
     <p>
-        <a href="~/ClientChapters/Create"><button>Create New</button></a>
+        <a href="~/ClientChapters/Create"><button class="button2">Create New</button></a>
     </p>
     <p>
         @using (Html.BeginForm("Index", "ClientChapters", FormMethod.Get))
@@ -62,12 +61,12 @@
             <b>Search By:</b> @Html.RadioButton("searchBy", "Client ID", true) <text>Client ID</text>
             @Html.RadioButton("searchBy", "ChapterCode") <text>Chapter Code</text>
             <br />
-            @Html.TextBox("search") <button>Search</button>
+            @Html.TextBox("search") <button class="button2">Search</button>
         }
     </p>
 
 
-    <table class="table" border="1" id="table">
+    <table class="table2" border="1" id="table">
         <tr>
             <th>Action</th>
             <th>
