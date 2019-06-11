@@ -6,449 +6,459 @@
 @{
     ViewBag.Title = "Index";
 }
+
 <style>
- 
- table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
- th {
-  background-color: #716e6e;
-  color: white;
-}
-
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {background-color: #f2f2f2;}
-
-tr:hover {background-color: #acacac;}
-
-button {
-  background-color: #333; /* TrueSense Blue */
-  border: none;
-  color: white;
-  padding: 2px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
 
 
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        background-color: #716e6e;
+        color: white;
+        cursor: pointer;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #acacac;
+    }
+
+    button {
+        background-color: #333; /* TrueSense Blue */
+        border: none;
+        color: white;
+        padding: 2px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
 </style>
-    <div style="font-family:Arial">
-        <h2>ClientChapter Search</h2>
 
-        <p>
-            <a href="~/ClientChapters/Create"><button>Create New</button></a>
-        </p>
-        <p>
-            @using (Html.BeginForm("Index", "ClientChapters", FormMethod.Get))
-            {
-                <b>Search By:</b> @Html.RadioButton("searchBy", "Client ID", true) <text>Client ID</text>
-                                  @Html.RadioButton("searchBy", "ChapterCode") <text>Chapter Code</text>
-                                  <br />
-                @Html.TextBox("search") <button>Search</button>
-            }
-        </p>
-        <table class="table" border="1">
+<script src="~/Scripts/TableSorter.js" /></script>
+
+<div style="font-family:Arial">
+    <h2>ClientChapter Search</h2>
+
+    <p>
+        <a href="~/ClientChapters/Create"><button>Create New</button></a>
+    </p>
+    <p>
+        @using (Html.BeginForm("Index", "ClientChapters", FormMethod.Get))
+        {
+            <b>Search By:</b> @Html.RadioButton("searchBy", "Client ID", true) <text>Client ID</text>
+            @Html.RadioButton("searchBy", "ChapterCode") <text>Chapter Code</text>
+            <br />
+            @Html.TextBox("search") <button>Search</button>
+        }
+    </p>
+
+
+    <table class="table" border="1" id="table">
+        <tr>
+            <th>Action</th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ChapterCode)
+            </th>
+            <th onclick="sortTable(0)">
+                @Html.DisplayNameFor(model => model.First().ChapterName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientLevel1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientLevel2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientLevel3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientLevel4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().EnvelopeLine1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().EnvelopeLine2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().EnvelopeLine3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().EnvelopeLine4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().EnvelopeLine5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().EnvelopeClientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientAddressLine1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientAddressLine2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientAddressLine3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Uw)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Commander)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CommanderTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().BillingChapter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().AreaName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CommanderLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientFax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientEmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().OldChapterCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CustomerBillingNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().WebAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Lockbox)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().UwBlackoutFromDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().UwBlackoutToDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().MD_COORD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Commander2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CommanderTitle2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CommanderLastName2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().BillingChapter2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientEmailAddress2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().MspThank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().LastThankYouDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().SeedNames)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().OriginalName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ChapterDesignation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Division)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Vertical)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ClientActiveDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().FiscalYearBegins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Flex1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Flex2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Flex3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Flex4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Flex5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ModifiedBy)
+            </th>
+        </tr>
+
+        @if (Model.Count() == 0)
+        {
             <tr>
-                <th>Action</th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientID)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ChapterCode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ChapterName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientLevel1)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientLevel2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientLevel3)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientLevel4)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().EnvelopeLine1)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().EnvelopeLine2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().EnvelopeLine3)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().EnvelopeLine4)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().EnvelopeLine5)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().EnvelopeClientName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientAddressLine1)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientAddressLine2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientAddressLine3)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientCity)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientState)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientZip)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Uw)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Commander)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().CommanderTitle)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().BillingChapter)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().AreaName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().CommanderLastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientPhone)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientFax)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientEmailAddress)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().OldChapterCode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().CustomerBillingNumber)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().WebAddress)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Region)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Lockbox)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().UwBlackoutFromDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().UwBlackoutToDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().MD_COORD)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Commander2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().CommanderTitle2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().CommanderLastName2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().BillingChapter2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientEmailAddress2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().MspThank)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().LastThankYouDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().SeedNames)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().OriginalName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ChapterDesignation)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Division)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Active)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Vertical)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ClientActiveDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().FiscalYearBegins)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Flex1)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Flex2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Flex3)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Flex4)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Flex5)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().CreateDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ModifiedDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().CreatedBy)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().ModifiedBy)
-                </th>
+                <td colspan="62">No rows match search criteria</td>
             </tr>
-
-            @if (Model.Count() == 0)
-            {
-                <tr>
-                    <td colspan="62">No rows match search criteria</td>
-                </tr>
-            }
-            else
-            {
+        }
+        else
+        {
 
             foreach (var item in Model)
             {
-        <tr>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ClientChapterSKey }) 
-                @Html.ActionLink("Details", "Details", new { id = item.ClientChapterSKey }) 
-                @Html.ActionLink("Delete", "Delete", new { id = item.ClientChapterSKey })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChapterCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChapterName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientLevel1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientLevel2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientLevel3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientLevel4)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnvelopeLine1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnvelopeLine2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnvelopeLine3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnvelopeLine4)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnvelopeLine5)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnvelopeClientName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientAddressLine1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientAddressLine2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientAddressLine3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientCity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientState)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientZip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Uw)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Commander)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CommanderTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BillingChapter)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AreaName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CommanderLastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientPhone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientFax)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientEmailAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OldChapterCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerBillingNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WebAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Region)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lockbox)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UwBlackoutFromDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UwBlackoutToDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MD_COORD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Commander2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CommanderTitle2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CommanderLastName2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BillingChapter2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientEmailAddress2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MspThank)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastThankYouDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SeedNames)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OriginalName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChapterDesignation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Division)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Active)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Vertical)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientActiveDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FiscalYearBegins)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Flex1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Flex2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Flex3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Flex4)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Flex5)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedBy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedBy)
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ClientChapterSKey })
+                        @Html.ActionLink("Details", "Details", new { id = item.ClientChapterSKey })
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.ClientChapterSKey })*@ <!--Took out delete, but view page still exists-->
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChapterCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChapterName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientLevel1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientLevel2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientLevel3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientLevel4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnvelopeLine1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnvelopeLine2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnvelopeLine3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnvelopeLine4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnvelopeLine5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnvelopeClientName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientAddressLine1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientAddressLine2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientAddressLine3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientCity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientState)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientZip)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Uw)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Commander)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CommanderTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BillingChapter)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AreaName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CommanderLastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientPhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientFax)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientEmailAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OldChapterCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerBillingNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WebAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Region)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lockbox)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UwBlackoutFromDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UwBlackoutToDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MD_COORD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Commander2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CommanderTitle2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CommanderLastName2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BillingChapter2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientEmailAddress2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MspThank)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastThankYouDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SeedNames)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OriginalName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChapterDesignation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Division)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Active)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vertical)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientActiveDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FiscalYearBegins)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Flex1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Flex2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Flex3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Flex4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Flex5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreateDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedBy)
+                    </td>
+                </tr>
             }
-            }
-        </table>
-            
-        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] }))
-    </div>
+        }
+    </table>
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] }))
+</div>
